@@ -1,0 +1,330 @@
+
+**** 12/02/18 01:55:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\Instrumentation.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Sun Dec 02 01:55:48 2018
+
+
+
+** Analysis setup **
+.tran 1ns .2s 0
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Instrumentation.net"
+
+
+
+**** INCLUDING Instrumentation.net ****
+* Schematics Netlist *
+
+
+
+V_V1         VPOS 0 9
+V_V2         0 VNEG 9
+V_V3         $N_0001 0 DC 0 AC 0
++SIN 0 1mv 10Hz 0 0 0
+X_U1         $N_0001 0 VPOS VNEG $N_0002 0 $N_0003 $N_0004 AD620/AD
+R_R1         $N_0004 $N_0003  560  
+R_R2         $N_0002 0  100k  
+
+**** RESUMING Instrumentation.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 12/02/18 01:55:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\Instrumentation.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.DX         X_U1.DY         
+          IS    1.000000E-12    1.000000E-12 
+          BV                   50            
+
+
+**** 12/02/18 01:55:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\Instrumentation.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.QN1        X_U1.QN2        
+               NPN             NPN             
+          IS  100.000000E-18  100.000000E-18 
+          BF   10.000000E+03  250            
+          NF    1               1            
+          BR    1               1            
+          NR    1               1            
+          KF  700.000000E-18    5.000000E-15 
+          CN    2.42            2.42         
+           D     .87             .87         
+
+
+**** 12/02/18 01:55:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\Instrumentation.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( VNEG)   -9.0000  ( VPOS)    9.0000  (X_U1.3)-257.3E-09 (X_U1.4)-137.3E-09     
+
+(X_U1.5)    8.5000 (X_U1.6)    8.5000 (X_U1.9)    -.6378 ($N_0001)    0.0000    
+
+($N_0002)     .0015                   ($N_0003)    -.6372                       
+
+($N_0004)    -.6372                   (X_U1.10)    -.6365                       
+
+(X_U1.11)    8.5000                   (X_U1.12)    8.9524                       
+
+(X_U1.13)    -.3182                   (X_U1.14)    -.9373                       
+
+(X_U1.15)    8.9524                   (X_U1.16)    -.3182                       
+
+(X_U1.17)    -.9373                   (X_U1.18)    -.9592                       
+
+(X_U1.19)    -.6363                   (X_U1.21) 14.74E-06                       
+
+(X_U1.25)    -.0024                   (X_U1.26)    7.4700                       
+
+(X_U1.27)   -7.6700                   (X_U1.36)    0.0000                       
+
+(X_U1.38)    0.0000                   (X_U1.40)    -.0024                       
+
+(X_U1.41)    1.6515                   (X_U1.42)   -1.6485                       
+
+(X_U1.43)   41.3100                   (X_U1.44)    8.5711                       
+
+(X_U1.45)     .0015                   (X_U1.51)    8.3000                       
+
+(X_U1.52)    8.3000                   (X_U1.53)   -8.3000                       
+
+(X_U1.54)   -8.3000                   (X_U1.98)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -8.437E-04
+    V_V2        -8.755E-04
+    V_V3        -6.431E-10
+    X_U1.VIOS   -4.931E-10
+    X_U1.V1     -5.000E-04
+    X_U1.V2      9.618E-12
+    X_U1.V3      9.618E-12
+    X_U1.V12     8.982E-12
+    X_U1.V13     8.982E-12
+    X_U1.V6      8.472E-12
+    X_U1.V7      8.668E-12
+    X_U1.V4     -2.654E-12
+    X_U1.V5     -2.646E-12
+
+    TOTAL POWER DISSIPATION   1.57E-02  WATTS
+
+
+**** 12/02/18 01:55:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\Instrumentation.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1.G1     X_U1.G2     X_U1.GSY    X_U1.GO1    X_U1.GO2  
+I-SOURCE     1.500E-13  -2.446E-03   8.288E-04   3.601E-02   3.599E-02
+
+NAME         X_U1.GC1    X_U1.GC2  
+I-SOURCE    -1.589E-05   1.589E-05
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1.E1     X_U1.E2     X_U1.EOOS   X_U1.EREF   X_U1.E3   
+V-SOURCE    -6.394E-01  -6.380E-01   2.000E-04   0.000E+00   0.000E+00
+I-SOURCE     3.199E-05   3.178E-05   3.181E-05  -5.361E-10   0.000E+00
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1.F1     X_U1.F2   
+I-SOURCE    -2.654E-12  -2.646E-12
+
+
+**** DIODES
+
+
+NAME         X_U1.D1     X_U1.D2     X_U1.D3     X_U1.D4     X_U1.D15  
+MODEL        X_U1.DX     X_U1.DX     X_U1.DX     X_U1.DX     X_U1.DX   
+ID          -1.64E-12   -1.64E-12   -9.62E-12   -9.62E-12   -8.98E-12 
+VD          -6.37E-01   -6.37E-01   -8.62E+00   -8.62E+00   -7.98E+00 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U1.D16    X_U1.D7     X_U1.D8     X_U1.D9     X_U1.D10  
+MODEL        X_U1.DX     X_U1.DX     X_U1.DX     X_U1.DY     X_U1.DY   
+ID          -8.98E-12   -8.47E-12   -8.67E-12   -1.59E-05   -1.86E-11 
+VD          -7.98E+00   -7.47E+00   -7.67E+00   -5.03E+01   -1.76E+01 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.63E+03    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U1.D11    X_U1.D12    X_U1.D13    X_U1.D14  
+MODEL        X_U1.DX     X_U1.DX     X_U1.DX     X_U1.DX   
+ID          -3.33E-11    1.59E-05   -2.65E-12   -2.65E-12 
+VD          -3.23E+01    4.29E-01   -1.65E+00   -1.65E+00 
+REQ          1.00E+12    1.63E+03    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         X_U1.Q1     X_U1.Q2     X_U1.Q3     X_U1.Q4   
+MODEL        X_U1.QN1    X_U1.QN1    X_U1.QN2    X_U1.QN2  
+IB           4.92E-10    4.92E-10    9.95E-09    9.95E-09 
+IC           5.00E-06    5.00E-06    2.49E-06    2.49E-06 
+VBE          6.37E-01    6.37E-01    6.19E-01    6.19E-01 
+VBC         -8.50E+00   -8.50E+00   -9.27E+00   -9.27E+00 
+VCE          9.14E+00    9.14E+00    9.89E+00    9.89E+00 
+BETADC       1.02E+04    1.02E+04    2.50E+02    2.50E+02 
+GM           1.93E-04    1.93E-04    9.63E-05    9.63E-05 
+RPI          5.17E+07    5.17E+07    2.60E+06    2.60E+06 
+RX           0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+RO           1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CBE          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CBC          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CJS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+BETAAC       1.00E+04    1.00E+04    2.50E+02    2.50E+02 
+CBX/CBX2     0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+FT/FT2       3.08E+15    3.08E+15    1.53E+15    1.53E+15 
+
+
+**** 12/02/18 01:55:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\Instrumentation.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( VNEG)   -9.0000  ( VPOS)    9.0000  (X_U1.3)-257.3E-09 (X_U1.4)-137.3E-09     
+
+(X_U1.5)    8.5000 (X_U1.6)    8.5000 (X_U1.9)    -.6378 ($N_0001)    0.0000    
+
+($N_0002)     .0015                   ($N_0003)    -.6372                       
+
+($N_0004)    -.6372                   (X_U1.10)    -.6365                       
+
+(X_U1.11)    8.5000                   (X_U1.12)    8.9524                       
+
+(X_U1.13)    -.3182                   (X_U1.14)    -.9373                       
+
+(X_U1.15)    8.9524                   (X_U1.16)    -.3182                       
+
+(X_U1.17)    -.9373                   (X_U1.18)    -.9592                       
+
+(X_U1.19)    -.6363                   (X_U1.21) 14.74E-06                       
+
+(X_U1.25)    -.0024                   (X_U1.26)    7.4700                       
+
+(X_U1.27)   -7.6700                   (X_U1.36)    0.0000                       
+
+(X_U1.38)    0.0000                   (X_U1.40)    -.0024                       
+
+(X_U1.41)    1.6515                   (X_U1.42)   -1.6485                       
+
+(X_U1.43)   41.3100                   (X_U1.44)    8.5711                       
+
+(X_U1.45)     .0015                   (X_U1.51)    8.3000                       
+
+(X_U1.52)    8.3000                   (X_U1.53)   -8.3000                       
+
+(X_U1.54)   -8.3000                   (X_U1.98)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -8.437E-04
+    V_V2        -8.755E-04
+    V_V3        -6.431E-10
+    X_U1.VIOS   -4.931E-10
+    X_U1.V1     -5.000E-04
+    X_U1.V2      9.618E-12
+    X_U1.V3      9.618E-12
+    X_U1.V12     8.982E-12
+    X_U1.V13     8.982E-12
+    X_U1.V6      8.472E-12
+    X_U1.V7      8.668E-12
+    X_U1.V4     -2.654E-12
+    X_U1.V5     -2.646E-12
+
+    TOTAL POWER DISSIPATION   1.57E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+

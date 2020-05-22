@@ -1,0 +1,642 @@
+
+**** 12/02/18 02:39:02 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\butterworth_low.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Sun Dec 02 02:39:00 2018
+
+
+
+** Analysis setup **
+.tran 1ns .2s 0
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "butterworth_low.net"
+
+
+
+**** INCLUDING butterworth_low.net ****
+* Schematics Netlist *
+
+
+
+V_V1         VPOS 0 9
+V_V2         0 VNEG 9
+X_U2         $N_0001 $N_0002 VPOS VNEG $N_0003 LM741
+C_C5         $N_0001 0  3.75u  
+C_C4         $N_0006 $N_0003  7.5u  
+R_R8         $N_0006 $N_0001  1k  
+R_R7         $N_0002 $N_0003  2k  
+X_U6         $N_0008 0 VPOS VNEG $N_0007 0 $N_0009 $N_0010 AD620/AD
+R_R9         $N_0007 $N_0006  1k  
+X_U5         $N_0011 $N_0012 VPOS VNEG $N_0013 LM741
+R_R14         $N_0011 0  20k  
+R_R12         $N_0012 $N_0013  10k  
+R_R13         $N_0016 $N_0013  10k  
+C_C8         $N_0003 $N_0016  11.25u  
+C_C9         $N_0016 $N_0011  11.25u  
+R_R15         $N_0010 $N_0009  1k  
+V_V7         $N_0008 0 DC 0 AC 0
++SIN 0 1m 50 0 0 0
+
+**** RESUMING butterworth_low.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 12/02/18 02:39:02 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\butterworth_low.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U6.DX         X_U6.DY         X_U2.x_lm741.dx X_U2.x_lm741.dy 
+          IS    1.000000E-12    1.000000E-12  800.000000E-18  800.000000E-18 
+          BV                   50                                            
+          RS                                    1               1.000000E-03 
+         CJO                                                   10.000000E-12 
+
+
+               X_U5.x_lm741.dx X_U5.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03 
+         CJO                   10.000000E-12 
+
+
+**** 12/02/18 02:39:02 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\butterworth_low.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U6.QN1        X_U6.QN2        X_U2.x_lm741.qx X_U5.x_lm741.qx 
+               NPN             NPN             NPN             NPN             
+          IS  100.000000E-18  100.000000E-18  800.000000E-18  800.000000E-18 
+          BF   10.000000E+03  250              93.75           93.75         
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+          KF  700.000000E-18    5.000000E-15                                 
+          CN    2.42            2.42            2.42            2.42         
+           D     .87             .87             .87             .87         
+
+
+**** 12/02/18 02:39:02 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\butterworth_low.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( VNEG)   -9.0000  ( VPOS)    9.0000  (X_U6.3)-257.3E-09 (X_U6.4)-137.3E-09     
+
+(X_U6.5)    8.5000 (X_U6.6)    8.5000 (X_U6.9)    -.6375 ($N_0001) 793.3E-06    
+
+($N_0002) 812.5E-06                   ($N_0003) 972.0E-06                       
+
+($N_0006) 873.0E-06                   ($N_0007) 952.7E-06                       
+
+($N_0008)    0.0000                   ($N_0009)    -.6372                       
+
+($N_0010)    -.6372                   ($N_0011)    -.0016                       
+
+($N_0012)    -.0016                   ($N_0013)-777.6E-06                       
+
+($N_0016)-777.6E-06                   (X_U6.10)    -.6368                       
+
+(X_U6.11)    8.5000                   (X_U6.12)    8.9524                       
+
+(X_U6.13)    -.3183                   (X_U6.14)    -.9375                       
+
+(X_U6.15)    8.9524                   (X_U6.16)    -.3183                       
+
+(X_U6.17)    -.9375                   (X_U6.18)    -.9594                       
+
+(X_U6.19)    -.6366                   (X_U6.21) 14.74E-06                       
+
+(X_U6.25)    -.0030                   (X_U6.26)    7.4700                       
+
+(X_U6.27)   -7.6700                   (X_U6.36)    0.0000                       
+
+(X_U6.38)    0.0000                   (X_U6.40)    -.0030                       
+
+(X_U6.41)    1.6510                   (X_U6.42)   -1.6490                       
+
+(X_U6.43)   41.3100                   (X_U6.44)    8.5712                       
+
+(X_U6.45) 952.7E-06                   (X_U6.51)    8.3000                       
+
+(X_U6.52)    8.3000                   (X_U6.53)   -8.3000                       
+
+(X_U6.54)   -8.3000                   (X_U6.98)    0.0000                       
+
+(X_U2.x_lm741.6)-93.02E-09            (X_U2.x_lm741.7) 976.0E-06                
+
+(X_U2.x_lm741.8) 976.0E-06            (X_U2.x_lm741.9)    0.0000                
+
+(X_U5.x_lm741.6) 71.88E-09            (X_U5.x_lm741.7)-773.6E-06                
+
+(X_U5.x_lm741.8)-773.6E-06            (X_U5.x_lm741.9)    0.0000                
+
+(X_U2.x_lm741.10)    -.6069           (X_U2.x_lm741.11)    8.9603               
+
+(X_U2.x_lm741.12)    8.9603           (X_U2.x_lm741.13)    -.5930               
+
+(X_U2.x_lm741.14)    -.5930           (X_U2.x_lm741.53)    8.0000               
+
+(X_U2.x_lm741.54)   -8.0000           (X_U2.x_lm741.90) 79.77E-06               
+
+(X_U2.x_lm741.91)   40.0000           (X_U2.x_lm741.92)  -40.0000               
+
+(X_U2.x_lm741.99)    0.0000           (X_U5.x_lm741.10)    -.6093               
+
+(X_U5.x_lm741.11)    8.9603           (X_U5.x_lm741.12)    8.9603               
+
+(X_U5.x_lm741.13)    -.5954           (X_U5.x_lm741.14)    -.5954               
+
+(X_U5.x_lm741.53)    8.0000           (X_U5.x_lm741.54)   -8.0000               
+
+(X_U5.x_lm741.90) 79.77E-06           (X_U5.x_lm741.91)   40.0000               
+
+(X_U5.x_lm741.92)  -40.0000           (X_U5.x_lm741.99)    0.0000           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.856E-03
+    V_V2        -2.888E-03
+    V_V7        -6.431E-10
+    X_U6.VIOS   -4.931E-10
+    X_U6.V1     -5.000E-04
+    X_U6.V2      9.618E-12
+    X_U6.V3      9.618E-12
+    X_U6.V12     8.982E-12
+    X_U6.V13     8.982E-12
+    X_U6.V6      8.473E-12
+    X_U6.V7      8.667E-12
+    X_U6.V4     -2.654E-12
+    X_U6.V5     -2.646E-12
+    X_U2.x_lm741.vb  -9.302E-13
+    X_U2.x_lm741.vc   8.000E-12
+    X_U2.x_lm741.ve   8.186E-12
+    X_U2.x_lm741.vlim   7.977E-08
+    X_U2.x_lm741.vlp  -4.000E-11
+    X_U2.x_lm741.vln  -4.000E-11
+    X_U5.x_lm741.vb   7.188E-13
+    X_U5.x_lm741.vc   8.002E-12
+    X_U5.x_lm741.ve   8.185E-12
+    X_U5.x_lm741.vlim   7.977E-08
+    X_U5.x_lm741.vlp  -4.000E-11
+    X_U5.x_lm741.vln  -4.000E-11
+
+    TOTAL POWER DISSIPATION   5.19E-02  WATTS
+
+
+**** 12/02/18 02:39:02 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\butterworth_low.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U6.G1     X_U6.G2     X_U6.GSY    X_U6.GO1    X_U6.GO2  
+I-SOURCE     1.384E-13  -3.014E-03   8.288E-04   3.601E-02   3.599E-02
+
+NAME         X_U6.GC1    X_U6.GC2    X_U2.x_lm741.ga       
+I-SOURCE    -1.587E-05   1.587E-05  -3.617E-09            
+
+NAME         X_U2.x_lm741.gcm        X_U5.x_lm741.ga       
+I-SOURCE    -3.618E-09              -3.633E-09            
+
+NAME         X_U5.x_lm741.gcm      
+I-SOURCE    -3.632E-09            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U6.E1     X_U6.E2     X_U6.EOOS   X_U6.EREF   X_U6.E3   
+V-SOURCE    -6.385E-01  -6.377E-01   2.000E-04   0.000E+00   0.000E+00
+I-SOURCE     3.193E-05   3.181E-05   3.182E-05   8.654E-10   0.000E+00
+
+NAME         X_U2.x_lm741.egnd       X_U5.x_lm741.egnd     
+V-SOURCE     0.000E+00               0.000E+00            
+I-SOURCE    -1.258E-07              -1.260E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U6.F1     X_U6.F2     X_U2.x_lm741.fb       
+I-SOURCE    -2.654E-12  -2.646E-12  -9.840E-06            
+
+NAME         X_U5.x_lm741.fb       
+I-SOURCE     7.656E-06            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U2.x_lm741.hlim       X_U5.x_lm741.hlim     
+V-SOURCE     7.977E-05               7.977E-05            
+I-SOURCE    -1.596E-16              -1.596E-16            
+
+
+**** DIODES
+
+
+NAME         X_U6.D1     X_U6.D2     X_U6.D3     X_U6.D4     X_U6.D15  
+MODEL        X_U6.DX     X_U6.DX     X_U6.DX     X_U6.DX     X_U6.DX   
+ID          -1.64E-12   -1.64E-12   -9.62E-12   -9.62E-12   -8.98E-12 
+VD          -6.37E-01   -6.37E-01   -8.62E+00   -8.62E+00   -7.98E+00 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U6.D16    X_U6.D7     X_U6.D8     X_U6.D9     X_U6.D10  
+MODEL        X_U6.DX     X_U6.DX     X_U6.DX     X_U6.DY     X_U6.DY   
+ID          -8.98E-12   -8.47E-12   -8.67E-12   -1.59E-05   -1.86E-11 
+VD          -7.98E+00   -7.47E+00   -7.67E+00   -5.03E+01   -1.76E+01 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.63E+03    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U6.D11    X_U6.D12    X_U6.D13    X_U6.D14  
+MODEL        X_U6.DX     X_U6.DX     X_U6.DX     X_U6.DX   
+ID          -3.33E-11    1.59E-05   -2.65E-12   -2.65E-12 
+VD          -3.23E+01    4.29E-01   -1.65E+00   -1.65E+00 
+REQ          1.00E+12    1.63E+03    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U2.x_lm741.dc         X_U2.x_lm741.de       
+MODEL        X_U2.x_lm741.dy         X_U2.x_lm741.dy       
+ID          -8.00E-12               -8.00E-12             
+VD          -8.00E+00               -8.00E+00             
+REQ          1.00E+12                1.00E+12             
+CAP          3.33E-12                3.33E-12             
+
+NAME         X_U2.x_lm741.dlp        X_U2.x_lm741.dln      
+MODEL        X_U2.x_lm741.dx         X_U2.x_lm741.dx       
+ID          -4.00E-11               -4.00E-11             
+VD          -4.00E+01               -4.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_U2.x_lm741.dp         X_U5.x_lm741.dc       
+MODEL        X_U2.x_lm741.dx         X_U5.x_lm741.dy       
+ID          -1.80E-11               -8.00E-12             
+VD          -1.80E+01               -8.00E+00             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                3.33E-12             
+
+NAME         X_U5.x_lm741.de         X_U5.x_lm741.dlp      
+MODEL        X_U5.x_lm741.dy         X_U5.x_lm741.dx       
+ID          -8.00E-12               -4.00E-11             
+VD          -8.00E+00               -4.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          3.33E-12                0.00E+00             
+
+NAME         X_U5.x_lm741.dln        X_U5.x_lm741.dp       
+MODEL        X_U5.x_lm741.dx         X_U5.x_lm741.dx       
+ID          -4.00E-11               -1.80E-11             
+VD          -4.00E+01               -1.80E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         X_U6.Q1     X_U6.Q2     X_U6.Q3     X_U6.Q4   
+MODEL        X_U6.QN1    X_U6.QN1    X_U6.QN2    X_U6.QN2  
+IB           4.92E-10    4.92E-10    9.95E-09    9.95E-09 
+IC           5.00E-06    5.00E-06    2.49E-06    2.49E-06 
+VBE          6.37E-01    6.37E-01    6.19E-01    6.19E-01 
+VBC         -8.50E+00   -8.50E+00   -9.27E+00   -9.27E+00 
+VCE          9.14E+00    9.14E+00    9.89E+00    9.89E+00 
+BETADC       1.02E+04    1.02E+04    2.50E+02    2.50E+02 
+GM           1.93E-04    1.93E-04    9.63E-05    9.63E-05 
+RPI          5.17E+07    5.17E+07    2.60E+06    2.60E+06 
+RX           0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+RO           1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CBE          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CBC          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CJS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+BETAAC       1.00E+04    1.00E+04    2.50E+02    2.50E+02 
+CBX/CBX2     0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+FT/FT2       3.08E+15    3.08E+15    1.53E+15    1.53E+15 
+
+
+
+NAME         X_U2.x_lm741.q1         X_U2.x_lm741.q2       
+MODEL        X_U2.x_lm741.qx         X_U2.x_lm741.qx       
+IB           7.98E-08                7.97E-08             
+IC           7.48E-06                7.48E-06             
+VBE          5.94E-01                5.94E-01             
+VBC         -8.96E+00               -8.96E+00             
+VCE          9.55E+00                9.55E+00             
+BETADC       9.38E+01                9.38E+01             
+GM           2.89E-04                2.89E-04             
+RPI          3.24E+05                3.24E+05             
+RX           0.00E+00                0.00E+00             
+RO           1.00E+12                1.00E+12             
+CBE          0.00E+00                0.00E+00             
+CBC          0.00E+00                0.00E+00             
+CJS          0.00E+00                0.00E+00             
+BETAAC       9.38E+01                9.38E+01             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2       4.60E+15                4.60E+15             
+
+
+
+NAME         X_U5.x_lm741.q1         X_U5.x_lm741.q2       
+MODEL        X_U5.x_lm741.qx         X_U5.x_lm741.qx       
+IB           7.98E-08                7.97E-08             
+IC           7.48E-06                7.48E-06             
+VBE          5.94E-01                5.94E-01             
+VBC         -8.96E+00               -8.96E+00             
+VCE          9.56E+00                9.56E+00             
+BETADC       9.38E+01                9.38E+01             
+GM           2.89E-04                2.89E-04             
+RPI          3.24E+05                3.24E+05             
+RX           0.00E+00                0.00E+00             
+RO           1.00E+12                1.00E+12             
+CBE          0.00E+00                0.00E+00             
+CBC          0.00E+00                0.00E+00             
+CJS          0.00E+00                0.00E+00             
+BETAAC       9.38E+01                9.38E+01             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2       4.60E+15                4.60E+15             
+
+
+**** 12/02/18 02:39:02 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\My Documents\Documents\Google Drive\Projects\3. Bionic man\pspice2\butterworth_low.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( VNEG)   -9.0000  ( VPOS)    9.0000  (X_U6.3)-257.3E-09 (X_U6.4)-137.3E-09     
+
+(X_U6.5)    8.5000 (X_U6.6)    8.5000 (X_U6.9)    -.6375 ($N_0001) 792.6E-06    
+
+($N_0002) 811.8E-06                   ($N_0003) 971.3E-06                       
+
+($N_0006) 872.3E-06                   ($N_0007) 952.0E-06                       
+
+($N_0008)    0.0000                   ($N_0009)    -.6372                       
+
+($N_0010)    -.6372                   ($N_0011)    -.0016                       
+
+($N_0012)    -.0016                   ($N_0013)-777.6E-06                       
+
+($N_0016)-777.6E-06                   (X_U6.10)    -.6368                       
+
+(X_U6.11)    8.5000                   (X_U6.12)    8.9524                       
+
+(X_U6.13)    -.3183                   (X_U6.14)    -.9375                       
+
+(X_U6.15)    8.9524                   (X_U6.16)    -.3183                       
+
+(X_U6.17)    -.9375                   (X_U6.18)    -.9594                       
+
+(X_U6.19)    -.6366                   (X_U6.21) 14.74E-06                       
+
+(X_U6.25)    -.0030                   (X_U6.26)    7.4700                       
+
+(X_U6.27)   -7.6700                   (X_U6.36)    0.0000                       
+
+(X_U6.38)    0.0000                   (X_U6.40)    -.0030                       
+
+(X_U6.41)    1.6510                   (X_U6.42)   -1.6490                       
+
+(X_U6.43)   41.3100                   (X_U6.44)    8.5712                       
+
+(X_U6.45) 952.0E-06                   (X_U6.51)    8.3000                       
+
+(X_U6.52)    8.3000                   (X_U6.53)   -8.3000                       
+
+(X_U6.54)   -8.3000                   (X_U6.98)    0.0000                       
+
+(X_U2.x_lm741.6)-92.95E-09            (X_U2.x_lm741.7) 975.3E-06                
+
+(X_U2.x_lm741.8) 975.3E-06            (X_U2.x_lm741.9)    0.0000                
+
+(X_U5.x_lm741.6) 71.88E-09            (X_U5.x_lm741.7)-773.6E-06                
+
+(X_U5.x_lm741.8)-773.6E-06            (X_U5.x_lm741.9)    0.0000                
+
+(X_U2.x_lm741.10)    -.6069           (X_U2.x_lm741.11)    8.9603               
+
+(X_U2.x_lm741.12)    8.9603           (X_U2.x_lm741.13)    -.5930               
+
+(X_U2.x_lm741.14)    -.5930           (X_U2.x_lm741.53)    8.0000               
+
+(X_U2.x_lm741.54)   -8.0000           (X_U2.x_lm741.90) 79.77E-06               
+
+(X_U2.x_lm741.91)   40.0000           (X_U2.x_lm741.92)  -40.0000               
+
+(X_U2.x_lm741.99)    0.0000           (X_U5.x_lm741.10)    -.6093               
+
+(X_U5.x_lm741.11)    8.9603           (X_U5.x_lm741.12)    8.9603               
+
+(X_U5.x_lm741.13)    -.5954           (X_U5.x_lm741.14)    -.5954               
+
+(X_U5.x_lm741.53)    8.0000           (X_U5.x_lm741.54)   -8.0000               
+
+(X_U5.x_lm741.90) 79.77E-06           (X_U5.x_lm741.91)   40.0000               
+
+(X_U5.x_lm741.92)  -40.0000           (X_U5.x_lm741.99)    0.0000           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.856E-03
+    V_V2        -2.888E-03
+    V_V7        -6.431E-10
+    X_U6.VIOS   -4.931E-10
+    X_U6.V1     -5.000E-04
+    X_U6.V2      9.618E-12
+    X_U6.V3      9.618E-12
+    X_U6.V12     8.982E-12
+    X_U6.V13     8.982E-12
+    X_U6.V6      8.473E-12
+    X_U6.V7      8.667E-12
+    X_U6.V4     -2.654E-12
+    X_U6.V5     -2.646E-12
+    X_U2.x_lm741.vb  -9.295E-13
+    X_U2.x_lm741.vc   8.000E-12
+    X_U2.x_lm741.ve   8.186E-12
+    X_U2.x_lm741.vlim   7.977E-08
+    X_U2.x_lm741.vlp  -4.000E-11
+    X_U2.x_lm741.vln  -4.000E-11
+    X_U5.x_lm741.vb   7.188E-13
+    X_U5.x_lm741.vc   8.002E-12
+    X_U5.x_lm741.ve   8.185E-12
+    X_U5.x_lm741.vlim   7.977E-08
+    X_U5.x_lm741.vlp  -4.000E-11
+    X_U5.x_lm741.vln  -4.000E-11
+
+    TOTAL POWER DISSIPATION   5.19E-02  WATTS
+
+
+ERROR -- Convergence problem in transient analysis at Time =  .046
+         Time step =  72.76E-15, minimum allowable step size =  200.0E-15
+
+  These voltages failed to converge:
+
+    V(X_U6.43)                =  -429.11mV  \   -1.088MV
+    V(X_U6.44)                =     41.28V  \    3.246KV
+
+  These supply currents failed to converge:
+
+    I(V_V1)                   =   -17.50mA  \   -2.856mA
+    I(V_V2)                   =   -17.49mA  \   -2.852mA
+
+  These devices failed to converge:
+    X_U6.D9   X_U6.D10  X_U6.D11  
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( VNEG)   -9.0000  ( VPOS)    9.0000  (X_U6.3) 912.3E-06 (X_U6.4)-137.4E-09     
+
+(X_U6.5)    8.5000 (X_U6.6)    8.5000 (X_U6.9)    -.6601 ($N_0001)    -.0024    
+
+($N_0002)    -.0024                   ($N_0003)    -.0022                       
+
+($N_0006)     .0163                   ($N_0007)     .0489                       
+
+($N_0008) 912.5E-06                   ($N_0009)    -.6372                       
+
+($N_0010)    -.6362                   ($N_0011)    -.0057                       
+
+($N_0012)    -.0057                   ($N_0013)    -.0049                       
+
+($N_0016)    -.0045                   (X_U6.10)    -.6133                       
+
+(X_U6.11)    8.5000                   (X_U6.12)    8.9524                       
+
+(X_U6.13)    -.3057                   (X_U6.14)    -.9251                       
+
+(X_U6.15)    8.9524                   (X_U6.16)    -.3066                       
+
+(X_U6.17)    -.9255                   (X_U6.18)    -.9472                       
+
+(X_U6.19)    -.6131                   (X_U6.21) 927.3E-06                       
+
+(X_U6.25)     .0469                   (X_U6.26)    7.4700                       
+
+(X_U6.27)   -7.6700                   (X_U6.36) 456.3E-06                       
+
+(X_U6.38) 354.0E-12                   (X_U6.40)     .0469                       
+
+(X_U6.41)    1.6961                   (X_U6.42)   -1.6039                       
+
+(X_U6.43)    -.4291                   (X_U6.44)   41.2840                       
+
+(X_U6.45)     .0461                   (X_U6.51)    8.3000                       
+
+(X_U6.52)    8.3000                   (X_U6.53)   -8.3000                       
+
+(X_U6.54)   -8.3000                   (X_U6.98)    0.0000                       
+
+(X_U2.x_lm741.6)-14.92E-06            (X_U2.x_lm741.7)    -.0028                
+
+(X_U2.x_lm741.8)    -.0028            (X_U2.x_lm741.9)    0.0000                
+
+(X_U5.x_lm741.6) 462.1E-09            (X_U5.x_lm741.7)    -.0049                
+
+(X_U5.x_lm741.8)    -.0049            (X_U5.x_lm741.9)    0.0000                
+
+(X_U2.x_lm741.10)    -.6101           (X_U2.x_lm741.11)    8.9603               
+
+(X_U2.x_lm741.12)    8.9603           (X_U2.x_lm741.13)    -.5962               
+
+(X_U2.x_lm741.14)    -.5962           (X_U2.x_lm741.53)    8.0000               
+
+(X_U2.x_lm741.54)   -8.0000           (X_U2.x_lm741.90)    -.0123               
+
+(X_U2.x_lm741.91)   40.0000           (X_U2.x_lm741.92)  -40.0000               
+
+(X_U2.x_lm741.99)    0.0000           (X_U5.x_lm741.10)    -.6134               
+
+(X_U5.x_lm741.11)    8.9603           (X_U5.x_lm741.12)    8.9603               
+
+(X_U5.x_lm741.13)    -.5995           (X_U5.x_lm741.14)    -.5995               
+
+(X_U5.x_lm741.53)    8.0000           (X_U5.x_lm741.54)   -8.0000               
+
+(X_U5.x_lm741.90) 43.30E-06           (X_U5.x_lm741.91)   40.0000               
+
+(X_U5.x_lm741.92)  -40.0000           (X_U5.x_lm741.99)    0.0000           
+
+
+          JOB ABORTED
+
+          TOTAL JOB TIME           13.56
+

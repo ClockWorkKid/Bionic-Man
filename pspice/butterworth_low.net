@@ -1,0 +1,22 @@
+* Schematics Netlist *
+
+
+
+V_V1         VPOS 0 9
+V_V2         0 VNEG 9
+X_U2         $N_0001 $N_0002 VPOS VNEG $N_0003 LM741
+C_C5         $N_0001 0  3.75u  
+C_C4         $N_0006 $N_0003  7.5u  
+R_R8         $N_0006 $N_0001  1k  
+R_R7         $N_0002 $N_0003  2k  
+X_U6         $N_0008 0 VPOS VNEG $N_0007 0 $N_0009 $N_0010 AD620/AD
+R_R9         $N_0007 $N_0006  1k  
+X_U5         $N_0011 $N_0012 VPOS VNEG $N_0013 LM741
+R_R14         $N_0011 0  20k  
+R_R12         $N_0012 $N_0013  10k  
+R_R13         $N_0016 $N_0013  10k  
+C_C8         $N_0003 $N_0016  11.25u  
+C_C9         $N_0016 $N_0011  11.25u  
+R_R15         $N_0010 $N_0009  1k  
+V_V7         $N_0008 0 DC 0 AC 0
++SIN 0 1m 50 0 0 0
